@@ -14,7 +14,7 @@ function allTaskCompleted() {
 			return;
 		}
 	}
-	alert("Congrats!!! You have successfully completed all the tasks."); // Show alert if all buttons are disabled
+	alert("Congrats!!! You have successfully completed all the tasks.");
 }
 
 document.querySelectorAll(".complete-btn").forEach((completeButton) => {
@@ -87,11 +87,3 @@ updateDate();
 document.getElementById("btn-history").addEventListener("click", function () {
 	document.getElementById("history").innerHTML = "";
 });
-
-
-
-getElementsByTagName
-getElementById
-getElementsByClassName
-querySelector
-querySelectorAll
