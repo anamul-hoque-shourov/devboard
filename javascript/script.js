@@ -6,6 +6,17 @@ document.getElementById("task-remaining").innerText = taskRemaining;
 let taskCompleted = 0;
 document.getElementById("task-completed").innerText = taskCompleted;
 
+function allTaskCompleted() {
+	const taskRemaining = document.querySelectorAll(".complete-btn");
+
+	for (let button of taskRemaining) {
+		if (!button.disabled) {
+			return;
+		}
+	}
+	alert("Congrats!!! You have successfully completed all the tasks."); // Show alert if all buttons are disabled
+}
+
 document.querySelectorAll(".complete-btn").forEach((completeButton) => {
 	completeButton.addEventListener("click", function () {
 		if (!this.disabled) {
@@ -16,6 +27,8 @@ document.querySelectorAll(".complete-btn").forEach((completeButton) => {
 
 			document.getElementById("task-remaining").innerText = taskRemaining;
 			document.getElementById("task-completed").innerText = taskCompleted;
+
+			alert("Board Updated Successfully.");
 
 			let taskName =
 				this.closest(".card-item").querySelector(".task").innerText;
@@ -34,6 +47,8 @@ document.querySelectorAll(".complete-btn").forEach((completeButton) => {
 
 			newActivity.innerText = `You have completed the task ${taskName} at ${time}`;
 			document.getElementById("history").appendChild(newActivity);
+
+			allTaskCompleted();
 		}
 	});
 });
