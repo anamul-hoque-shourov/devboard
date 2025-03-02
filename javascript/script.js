@@ -16,6 +16,24 @@ document.querySelectorAll(".complete-btn").forEach((completeButton) => {
 
 			document.getElementById("task-remaining").innerText = taskRemaining;
 			document.getElementById("task-completed").innerText = taskCompleted;
+
+			let taskName =
+				this.closest(".card-item").querySelector(".task").innerText;
+			const currentTime = new Date();
+			const time = currentTime.toLocaleTimeString();
+
+			const newActivity = document.createElement("p");
+			newActivity.classList.add(
+				"mt-3",
+				"text-sm",
+				"bg-indigo-50",
+				"p-2",
+				"rounded-lg",
+				"text-left"
+			);
+
+			newActivity.innerText = `You have completed the task ${taskName} at ${time}`;
+			document.getElementById("history").appendChild(newActivity);
 		}
 	});
 });
