@@ -1,3 +1,25 @@
+// complete button functionality
+
+let taskRemaining = document.querySelectorAll(".complete-btn").length;
+document.getElementById("task-remaining").innerText = taskRemaining;
+
+let taskCompleted = 0;
+document.getElementById("task-completed").innerText = taskCompleted;
+
+document.querySelectorAll(".complete-btn").forEach((completeButton) => {
+	completeButton.addEventListener("click", function () {
+		if (!this.disabled) {
+			this.disabled = true;
+
+			taskRemaining--;
+			taskCompleted++;
+
+			document.getElementById("task-remaining").innerText = taskRemaining;
+			document.getElementById("task-completed").innerText = taskCompleted;
+		}
+	});
+});
+
 // background color change
 
 const colorTray = ["beige", "coral", "bisque", "lavender", "pink", "plum", ""];
@@ -14,7 +36,7 @@ document
 function updateDate() {
 	const currentDate = new Date();
 	const displayDatetime = {
-		weekday: "long",
+		weekday: "short",
 		month: "long",
 		day: "numeric",
 		year: "numeric",
@@ -28,3 +50,7 @@ setInterval(updateDate, 1000);
 updateDate();
 
 // activity log update
+
+document.getElementById("btn-history").addEventListener("click", function () {
+	document.getElementById("history").innerHTML = "";
+});

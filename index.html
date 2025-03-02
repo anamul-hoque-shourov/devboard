@@ -29,12 +29,12 @@
             <img src="./resources/assets/logo.png" class="size-10">
             <h1 class="text-2xl">Dev<span class="font-bold">Board</span> </h1>
         </div>
-        <div class="flex gap-5">
+        <div class="flex items-center gap-5">
             <div class="flex justify-center items-center px-4 py-2 gap-2 rounded-[300px] bg-indigo-50">
                 <img class="size-5" src="./resources/assets/checkbox.png">
-                <span class="">0</span>
+                <span id="task-completed" class="text-xl font-semibold"></span>
             </div>
-            <div id="bg-color-change" class="btn btn-ghost btn-circle">
+            <div id="bg-color-change" class="btn btn-circle">
                 <img src="./resources/assets/theme-btn.png" />
             </div>
         </div>
@@ -42,13 +42,13 @@
     <main class="flex mt-5 mb-20 gap-5">
         <div class="w-3/4 p-5 rounded-xl bg-white">
             <!-- upper body section -->
-            <div class="grid grid-cols-[1fr_2fr_1fr] gap-5 mb-5">
+            <div class="grid grid-cols-[1fr_2fr_1fr] gap-2 mb-5">
                 <div class="flex justify-center items-center gap-3 p-4 bg-indigo-50 rounded-md">
                     <div class="bg-white rounded-full p-3"><img class="size-5" src="./resources/assets/checkbox.png">
                     </div>
                     <div>
                         <p class="text-xs">Task Assigned</p>
-                        <p class="text-2xl font-bold">0</p>
+                        <p id="task-remaining" class="text-xl font-semibold"></p>
                     </div>
                 </div>
                 <div
@@ -72,12 +72,13 @@
                         <br> check for overlapping elements, and ensure onClick works properly and ensure onClick
                         works properly
                     </p>
-                    <div class=" flex justify-between items-center mt-10 border-dashed border-opacity-50">
+                    <div class="flex justify-between items-center mt-10 border-dashed border-opacity-50">
                         <div>
                             <p class="text-xs">Deadline</p>
                             <p class="text-sm font-semibold">21 March 2025</p>
                         </div>
-                        <button class="text-xs bg-blue-500 text-white px-3 py-2 rounded-md">Completed</button>
+                        <button
+                            class="btn text-xs bg-blue-500 text-white rounded-lg complete-btn complete-btn">Completed</button>
                     </div>
                 </div>
                 <!-- card 2 -->
@@ -93,7 +94,7 @@
                             <p class="text-xs">Deadline</p>
                             <p class="text-sm font-semibold">21 March 2025</p>
                         </div>
-                        <button class="text-xs bg-blue-500 text-white px-3 py-2 rounded-md">Completed</button>
+                        <button class="btn text-xs bg-blue-500 text-white rounded-lg complete-btn">Completed</button>
                     </div>
                 </div>
                 <!-- card 3 -->
@@ -109,7 +110,7 @@
                             <p class="text-xs">Deadline</p>
                             <p class="text-sm font-semibold">21 March 2025</p>
                         </div>
-                        <button class="text-xs bg-blue-500 text-white px-3 py-2 rounded-md">Completed</button>
+                        <button class="btn text-xs bg-blue-500 text-white rounded-lg complete-btn">Completed</button>
                     </div>
                 </div>
                 <!-- card 4 -->
@@ -125,7 +126,7 @@
                             <p class="text-xs">Deadline</p>
                             <p class="text-sm font-semibold">21 March 2025</p>
                         </div>
-                        <button class="text-xs bg-blue-500 text-white px-3 py-2 rounded-md">Completed</button>
+                        <button class="btn text-xs bg-blue-500 text-white rounded-lg complete-btn">Completed</button>
                     </div>
                 </div>
                 <!-- card 5 -->
@@ -141,7 +142,7 @@
                             <p class="text-xs">Deadline</p>
                             <p class="text-sm font-semibold">21 March 2025</p>
                         </div>
-                        <button class="text-xs bg-blue-500 text-white px-3 py-2 rounded-md">Completed</button>
+                        <button class="btn text-xs bg-blue-500 text-white rounded-lg complete-btn">Completed</button>
                     </div>
                 </div>
                 <!-- card 6 -->
@@ -157,7 +158,7 @@
                             <p class="text-xs">Deadline</p>
                             <p class="text-sm font-semibold">21 March 2025</p>
                         </div>
-                        <button class="text-xs bg-blue-500 text-white px-3 py-2 rounded-md">Completed</button>
+                        <button class="btn text-xs bg-blue-500 text-white rounded-lg complete-btn">Completed</button>
                     </div>
                 </div>
             </div>
@@ -167,8 +168,8 @@
                 <img src="./resources/assets/activity.png" alt="">
                 <p>Activity Log</p>
             </div>
-            <button class="text-xs bg-blue-500 text-white px-3 py-2 rounded-md">Clear History</button>
-            <div class="mt-6">
+            <button id="btn-history" class="btn text-xs bg-blue-500 text-white rounded-lg">Clear History</button>
+            <div id="history" class="mt-6">
                 <p class="text-xs bg-indigo-50 p-2 rounded-md text-left">You have Complete The Task Add Dark
                     Mode at 12:48:15 PM
                 </p>
