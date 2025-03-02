@@ -34,13 +34,13 @@
                 <img class="size-5" src="./resources/assets/checkbox.png">
                 <span class="">0</span>
             </div>
-            <div class="w-10 rounded-full">
+            <div id="bg-color-change" class="btn btn-ghost btn-circle">
                 <img src="./resources/assets/theme-btn.png" />
             </div>
         </div>
     </nav>
     <main class="flex mt-5 mb-20 gap-5">
-        <div class="w-3/4 p-5 gap-5 rounded-xl bg-white">
+        <div class="w-3/4 p-5 rounded-xl bg-white">
             <!-- upper body section -->
             <div class="grid grid-cols-[1fr_2fr_1fr] gap-5 mb-5">
                 <div class="flex justify-center items-center gap-3 p-4 bg-indigo-50 rounded-md">
@@ -59,7 +59,7 @@
                 <div class="flex justify-center items-center gap-3 p-4 bg-indigo-50 rounded-md">
                     <div class="bg-white rounded-full p-3"><img class="size-5" src="./resources/assets/calender.png">
                     </div>
-                    <p>Sat,<br><span>Mar 01 2025</span></p>
+                    <p id="date" class="text-sm"></p>
                 </div>
             </div>
             <!-- lower body section -->
@@ -162,7 +162,18 @@
                 </div>
             </div>
         </div>
-        <div class="w-1/4 bg-white rounded-xl"></div>
+        <div class="w-1/4 p-5 text-center rounded-xl bg-white">
+            <div class="flex justify-center items-center mb-5 gap-3">
+                <img src="./resources/assets/activity.png" alt="">
+                <p>Activity Log</p>
+            </div>
+            <button class="text-xs bg-blue-500 text-white px-3 py-2 rounded-md">Clear History</button>
+            <div class="mt-6">
+                <p class="text-xs bg-indigo-50 p-2 rounded-md text-left">You have Complete The Task Add Dark
+                    Mode at 12:48:15 PM
+                </p>
+            </div>
+        </div>
     </main>
     <script src="./javascript/script.js">
     </script>
