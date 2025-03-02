@@ -87,3 +87,11 @@ updateDate();
 document.getElementById("btn-history").addEventListener("click", function () {
 	document.getElementById("history").innerHTML = "";
 });
+
+
+
+getElementsByTagName
+getElementById
+getElementsByClassName
+querySelector
+querySelectorAll
