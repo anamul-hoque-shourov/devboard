@@ -7,79 +7,86 @@ let taskCompleted = 0;
 document.getElementById("task-completed").innerText = taskCompleted;
 
 function allTaskCompleted() {
-	const taskRemaining = document.querySelectorAll(".complete-btn");
+    const taskRemaining = document.querySelectorAll(".complete-btn");
 
-	for (let button of taskRemaining) {
-		if (!button.disabled) {
-			return;
-		}
-	}
-	alert("Congrats!!! You have successfully completed all the tasks.");
+    for (let button of taskRemaining) {
+        if (!button.disabled) {
+            return;
+        }
+    }
+    alert("Congrats!!! You have successfully completed all the tasks.");
 }
 
 document.querySelectorAll(".complete-btn").forEach((completeButton) => {
-	completeButton.addEventListener("click", function () {
-		if (!this.disabled) {
-			this.disabled = true;
+    completeButton.addEventListener("click", function () {
+        if (!this.disabled) {
+            this.disabled = true;
 
-			taskRemaining--;
-			taskCompleted++;
+            taskRemaining--;
+            taskCompleted++;
 
-			document.getElementById("task-remaining").innerText = taskRemaining;
-			document.getElementById("task-completed").innerText = taskCompleted;
+            document.getElementById("task-remaining").innerText = taskRemaining;
+            document.getElementById("task-completed").innerText = taskCompleted;
 
-			alert("Board Updated Successfully.");
+            alert("Board Updated Successfully.");
 
-			let taskName =
-				this.closest(".card-item").querySelector(".task").innerText;
+            let taskName =
+                this.closest(".card-item").querySelector(".task").innerText;
 
-			const currentTime = new Date();
-			const time = currentTime.toLocaleTimeString();
+            const currentTime = new Date();
+            const time = currentTime.toLocaleTimeString();
 
-			const newActivity = document.createElement("p");
-			newActivity.classList.add(
-				"mt-3",
-				"text-sm",
-				"bg-indigo-50",
-				"p-2",
-				"rounded-lg",
-				"text-left"
-			);
+            const newActivity = document.createElement("p");
+            newActivity.classList.add(
+                "mt-3",
+                "text-sm",
+                "bg-indigo-50",
+                "p-2",
+                "rounded-lg",
+                "text-left"
+            );
 
-			newActivity.innerHTML = `You have completed the task <b>${taskName}</b> at ${time}`; //dynamic task and date update in the activity log
+            newActivity.innerHTML = `You have completed the task <b>${taskName}</b> at ${time}`;
 
-			document.getElementById("history").appendChild(newActivity);
+            document.getElementById("history").appendChild(newActivity);
 
-			allTaskCompleted();
-		}
-	});
+            allTaskCompleted();
+        }
+    });
 });
 
 // background color change
 
-const colorTray = ["beige", "coral", "bisque", "lavender", "pink", "plum", ""];
-let i = 0;
+function getRandomColor() {
+    const letters = "0123456789ABCDEF";
+    let color = "#";
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
 document
-	.getElementById("bg-color-change")
-	.addEventListener("click", function () {
-		document.documentElement.style.backgroundColor = colorTray[i];
-		i = (i + 1) % colorTray.length;
-	});
+    .getElementById("bg-color-change")
+    .addEventListener("click", function () {
+        const randomColor = getRandomColor();
+        document.documentElement.style.backgroundColor = randomColor;
+    });
 
 // current date update
 
 function updateDate() {
-	const currentDate = new Date();
-	const displayDatetime = {
-		weekday: "short",
-		month: "long",
-		day: "numeric",
-		year: "numeric",
-	};
-	document.getElementById("date").innerText = currentDate.toLocaleString(
-		"en-BD",
-		displayDatetime
-	);
+    const currentDate = new Date();
+    const displayDatetime = {
+        weekday: "short",
+        month: "long",
+        day: "numeric",
+        year: "numeric",
+    };
+    document.getElementById("date").innerText = currentDate.toLocaleString(
+        "en-BD",
+        displayDatetime
+    );
 }
 setInterval(updateDate, 1000);
 updateDate();
@@ -87,5 +94,5 @@ updateDate();
 // activity log update
 
 document.getElementById("btn-history").addEventListener("click", function () {
-	document.getElementById("history").innerHTML = "";
+    document.getElementById("history").innerHTML = "";
 });
