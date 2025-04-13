@@ -6,15 +6,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevBoard</title>
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
 
-    <!--added google font cdn -->
+    <!-- google font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 
-    <!-- added daisyui cdn -->
+    <!-- daisyUI -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
@@ -27,67 +28,94 @@
 
 </head>
 
-<body class="poppins-font w-[90%] mx-auto">
+<body class="w-11/12 mx-auto poppins-font">
 
-    <!-- navbar section -->
-    <nav class="flex justify-between items-center navbar bg-white mt-5 px-5 rounded-xl">
+    <header>
 
-        <div class="flex justify-center items-center gap-2">
+        <!-- navbar -->
+        <nav class="flex justify-between items-center bg-white mt-5 p-3 rounded-xl">
 
-            <img src="./resources/assets/logo.png" class="size-10">
-            <h1 class="text-2xl">Dev<span class="font-bold">Board</span> </h1>
+            <div class="flex justify-center items-center gap-2">
 
-        </div>
+                <img src="./assets/logo.png" class="size-10">
+                <h1 class="text-2xl">Dev<span class="font-bold">Board</span></h1>
 
-        <div class="flex items-center gap-5">
-
-            <div class="flex justify-center items-center px-4 py-2 gap-2 rounded-[300px] bg-indigo-50">
-                <img class="size-5" src="./resources/assets/checkbox.png">
-                <span id="task-completed" class="text-xl font-semibold"></span>
             </div>
 
-            <div id="bg-color-change" class="btn btn-circle">
-                <img src="./resources/assets/theme-btn.png" />
+            <div class="flex items-center gap-5">
+
+                <div class="flex justify-center items-center px-4 py-2 gap-2 rounded-full bg-indigo-50">
+
+                    <img class="size-5" src="./assets/checkbox.png">
+                    <span id="task-completed" class="text-xl font-semibold"></span>
+
+                </div>
+
+
+                <img id="bg-color-change" class="cursor-pointer" src="./assets/theme-btn.png" />
+
+
             </div>
 
-        </div>
+        </nav>
 
-    </nav>
+    </header>
+
     <main class="flex mt-5 mb-20 gap-5">
 
-        <!-- main desk section -->
-        <div class="w-3/4 p-5 rounded-xl bg-white">
+        <!-- main desk -->
+        <article class="w-3/4 p-5 rounded-xl bg-white">
 
-            <!-- upper body section -->
-            <div class="grid grid-cols-[1fr_2fr_1fr] gap-2 mb-5 border-b-2 border-dotted border-gray-300">
+            <!-- upper body -->
+            <section class="grid grid-cols-[1fr_2fr_1fr] gap-2 mb-5 border-b-2 border-dotted border-gray-300">
 
                 <div class="flex justify-center items-center gap-3 p-4 bg-indigo-50 rounded-md mb-5">
-                    <div class="bg-white rounded-full p-3"><img class="size-5" src="./resources/assets/checkbox.png">
+
+                    <div class="bg-white rounded-full p-3">
+
+                        <img class="size-5" src="./assets/checkbox.png">
+
                     </div>
+
                     <div>
+
                         <p class="text-xs">Task Assigned</p>
+
                         <p id="task-remaining" class="text-xl font-semibold"></p>
+
                     </div>
+
                 </div>
 
                 <a href="./blogs.html">
+
                     <div
                         class="flex justify-center items-center gap-3 p-4 bg-gradient-to-br from-indigo-500 to-indigo-300 rounded-md mb-5">
-                        <img class="size-14" src="./resources/assets/board.png" alt="">
+
+                        <img class="size-14" src="./assets/board.png" alt="">
+
                         <p class="text-white">Discover Something <br> New Today!</p>
+
                     </div>
+
                 </a>
 
                 <div class="flex justify-center items-center gap-3 p-4 bg-indigo-50 rounded-md mb-5">
-                    <div class="bg-white rounded-full p-3"><img class="size-5" src="./resources/assets/calender.png">
+
+                    <div class="bg-white rounded-full p-3">
+
+                        <img class="size-5" src="./assets/calender.png">
+
                     </div>
+
                     <p id="date" class="text-sm"></p>
+
                 </div>
 
-            </div>
+            </section>
 
-            <!-- lower body section -->
-            <div class="grid grid-cols-3 gap-5">
+            <!-- lower body -->
+            <section class="grid grid-cols-3 gap-5">
 
                 <!-- card 1 -->
                 <div class="card-item p-5 bg-indigo-50 rounded-md">
@@ -104,14 +132,18 @@
                     <div class="flex justify-between items-center mt-10 border-dashed border-opacity-50">
 
                         <div>
+
                             <p class="text-xs">Deadline</p>
+
                             <p class="text-sm font-semibold">21 March 2025</p>
+
                         </div>
 
                         <button
                             class="btn text-xs bg-blue-500 text-white rounded-lg complete-btn complete-btn">Completed</button>
 
                     </div>
+
                 </div>
 
                 <!-- card 2 -->
@@ -129,13 +161,17 @@
                     <div class=" flex justify-between items-center mt-10 border-dashed border-opacity-50">
 
                         <div>
+
                             <p class="text-xs">Deadline</p>
+
                             <p class="text-sm font-semibold">21 March 2025</p>
+
                         </div>
 
                         <button class="btn text-xs bg-blue-500 text-white rounded-lg complete-btn">Completed</button>
 
                     </div>
+
                 </div>
 
                 <!-- card 3 -->
@@ -153,13 +189,17 @@
                     <div class=" flex justify-between items-center mt-10 border-dashed border-opacity-50">
 
                         <div>
+
                             <p class="text-xs">Deadline</p>
+
                             <p class="text-sm font-semibold">21 March 2025</p>
+
                         </div>
 
                         <button class="btn text-xs bg-blue-500 text-white rounded-lg complete-btn">Completed</button>
 
                     </div>
+
                 </div>
 
                 <!-- card 4 -->
@@ -177,13 +217,17 @@
                     <div class=" flex justify-between items-center mt-10 border-dashed border-opacity-50">
 
                         <div>
+
                             <p class="text-xs">Deadline</p>
+
                             <p class="text-sm font-semibold">21 March 2025</p>
+
                         </div>
 
                         <button class="btn text-xs bg-blue-500 text-white rounded-lg complete-btn">Completed</button>
 
                     </div>
+
                 </div>
 
                 <!-- card 5 -->
@@ -201,13 +245,17 @@
                     <div class=" flex justify-between items-center mt-10 border-dashed border-opacity-50">
 
                         <div>
+
                             <p class="text-xs">Deadline</p>
+
                             <p class="text-sm font-semibold">21 March 2025</p>
+
                         </div>
 
                         <button class="btn text-xs bg-blue-500 text-white rounded-lg complete-btn">Completed</button>
 
                     </div>
+
                 </div>
 
                 <!-- card 6 -->
@@ -225,37 +273,50 @@
                     <div class=" flex justify-between items-center mt-10 border-dashed border-opacity-50">
 
                         <div>
+
                             <p class="text-xs">Deadline</p>
+
                             <p class="text-sm font-semibold">21 March 2025</p>
+
                         </div>
 
                         <button class="btn text-xs bg-blue-500 text-white rounded-lg complete-btn">Completed</button>
 
                     </div>
+
                 </div>
 
-            </div>
+            </section>
 
-        </div>
+        </article>
 
-        <!-- activity log section -->
-        <div class="w-1/4 p-5 text-center rounded-xl bg-white">
+        <!-- activity log -->
+        <aside class="w-1/4 p-5 text-center rounded-xl bg-white">
+
             <div class="border-b-2 border-dotted border-gray-300">
+
                 <div class="flex justify-center items-center mb-5 gap-3">
+
                     <img src="./resources/assets/activity.png" alt="">
+
                     <p>Activity Log</p>
+
                 </div>
+
                 <button id="btn-history" class="btn text-xs bg-blue-500 text-white rounded-lg mb-3">Clear
                     History</button>
+
             </div>
+
             <div id="history" class="mt-3">
+
             </div>
-        </div>
+
+        </aside>
 
     </main>
 
-    <script src="./javascript/script.js">
-    </script>
+    <script src="./javascript/script.js"></script>
 
 </body>
 

@@ -32,6 +32,7 @@ document.querySelectorAll(".complete-btn").forEach((completeButton) => {
 
 			let taskName =
 				this.closest(".card-item").querySelector(".task").innerText;
+
 			const currentTime = new Date();
 			const time = currentTime.toLocaleTimeString();
 
@@ -45,7 +46,8 @@ document.querySelectorAll(".complete-btn").forEach((completeButton) => {
 				"text-left"
 			);
 
-			newActivity.innerText = `You have completed the task ${taskName} at ${time}`;
+			newActivity.innerHTML = `You have completed the task <b>${taskName}</b> at ${time}`; //dynamic task and date update in the activity log
+
 			document.getElementById("history").appendChild(newActivity);
 
 			allTaskCompleted();
